@@ -38,7 +38,7 @@ main(int argc, char *argv[])
 
     void *handle = dlopen(NULL, RTLD_LAZY);
     if (handle == NULL) {
-        fprintf(stderr, "Error opening library\n");
+        fprintf(stderr, "Error opening file\n");
         return 0;
     }
 
