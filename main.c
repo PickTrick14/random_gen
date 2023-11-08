@@ -7,10 +7,10 @@
 
 enum
 {
-    MIN_AMOUNT_ARGS = 3,
+    POS_AMOUNT = 2,
+    MIN_AMOUNT_ARGS,
     MAX_AMOUNT_NUM = 100000,
-    BASE = 10,
-    POS_AMOUNT = 2
+    BASE = 10
 };
 
 const char lin_type[] = "linear";
