@@ -23,7 +23,7 @@ main(int argc, char *argv[])
 {
     if (argc < MIN_AMOUNT_ARGS + 1) {
         fprintf(stderr, "Not enough arguments\n");
-        return 1;
+        return 0;
     }
 
     int flag_type = 0;
@@ -33,13 +33,13 @@ main(int argc, char *argv[])
         flag_type = 2;
     } else {
         fprintf(stderr, "Wrong type\n");
-        return 1;
+        return 0;
     }
 
     void *handle = dlopen(NULL, RTLD_LAZY);
     if (handle == NULL) {
         fprintf(stderr, "Error opening library\n");
-        return 1;
+        return 0;
     }
 
     errno = 0;
@@ -47,7 +47,7 @@ main(int argc, char *argv[])
     long amount = strtol(argv[POS_AMOUNT], &ctrl, BASE);
     if (errno || *ctrl || ctrl == argv[POS_AMOUNT] || amount < 0 || amount > MAX_AMOUNT_NUM) {
         fprintf(stderr, "Wrong amount\n");
-        return 1;
+        return 0;
     }
 
     RandomSource *src = NULL;
@@ -63,7 +63,7 @@ main(int argc, char *argv[])
     if (src == NULL) {
         dlclose(handle);
         fprintf(stderr, "Error creating random source\n");
-        return 1;
+        return 0;
     }
 
     for (int i = 0; i < amount; i++) {
