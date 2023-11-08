@@ -52,8 +52,8 @@ random_random_factory(const char *params)
     fd = open(urandom, O_RDONLY);
     if (fd < 0) {
         fprintf(stderr, "Error opening random source\n");
-        free(obj);
         free(obj->ops);
+        free(obj);
         return NULL;
     }
 
