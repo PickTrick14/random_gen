@@ -67,7 +67,7 @@ main(int argc, char *argv[])
     }
 
     for (int i = 0; i < amount; i++) {
-        printf("%f\n", src->ops->next(src));
+        printf("%.10g\n", src->ops->next(src));
     }
 
     src->ops->destroy(src);
