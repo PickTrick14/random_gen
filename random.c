@@ -8,6 +8,7 @@
 int fd = -1;
 
 const double mod = 1.7976931348623157E+308;
+
 const char urandom[] = "/dev/urandom";
 
 RandomSource *
