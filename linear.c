@@ -13,7 +13,7 @@ enum
     BASE = 10
 };
 
-unsigned int seed = 0;
+static unsigned int seed = 0;
 
 RandomSource *
 lin_destroy(RandomSource *src)
