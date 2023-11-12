@@ -47,7 +47,7 @@ random_linear_factory(const char *params)
     }
 
     obj->ops->destroy = (void *) lin_destroy;
-    obj->ops->next = (void *) lin_next;
+    obj->ops->next = lin_next;
 
     char *ctrl = NULL;
     errno = 0;

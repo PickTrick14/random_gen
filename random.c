@@ -58,6 +58,6 @@ random_random_factory(const char *params)
     }
 
     obj->ops->destroy = (void *) rand_destroy;
-    obj->ops->next = (void *) rand_next;
+    obj->ops->next = rand_next;
     return obj;
 }
