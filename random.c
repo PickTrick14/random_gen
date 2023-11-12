@@ -4,9 +4,10 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <limits.h>
 
 static int fd = -1;
-static const double mod = 1.7976931348623157E+308;
+static const double mod = 0xffffffffU;
 static const char urandom[] = "/dev/urandom";
 
 RandomSource *
@@ -26,7 +27,7 @@ rand_destroy(RandomSource *src)
 double
 rand_next(RandomSource *src)
 {
-    double ans = 0;
+    unsigned int ans = 0;
     if (read(fd, &ans, sizeof(ans)) != sizeof(ans)) {
         fprintf(stderr, "Error reading from random source\n");
         rand_destroy(src);

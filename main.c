@@ -56,7 +56,7 @@ main(int argc, char *argv[])
         func = (RandomSource * (*) (const char *) )(dlsym(handle, lin_factory));
         src = func(argv[MIN_AMOUNT_ARGS]);
     } else if (flag_type == 2) {
-        func = (RandomSource * (*) (const char *) )(dlsym(handle, lin_factory));
+        func = (RandomSource * (*) (const char *) )(dlsym(handle, rand_factory));
         src = func(argv[MIN_AMOUNT_ARGS]);
     }
 
