@@ -1,6 +1,6 @@
-CC=
-LD=
-CFLAGS=
+CC=gcc
+LD=gcc
+CFLAGS=-Wall -Wextra -Werror -O2
 LDFLAGS=
 
 all: printrandom
