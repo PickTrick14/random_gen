@@ -37,7 +37,7 @@ rand_next(RandomSource *src)
 }
 
 RandomSource *
-random_random_factory(const char *params)
+random_random_factory(void)
 {
     RandomSource *obj = calloc(1, sizeof(*obj));
     if (obj == NULL) {

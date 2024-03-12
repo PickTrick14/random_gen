@@ -26,7 +26,7 @@ lin_destroy(RandomSource *src)
 }
 
 double
-lin_next(RandomSource *src)
+lin_next(void)
 {
     seed = (seed * MULT + INC) % MOD;
     return (double) seed / (double) MOD;
